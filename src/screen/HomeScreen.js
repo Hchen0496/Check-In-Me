@@ -1,20 +1,34 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  Box,
+  Text,
+  Button,
+  Link,
+  FormControl,
+  Input,
+  HStack,
+} from "native-base";
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Box>
+      <Box alignItems="center" height={200}>
+        <FormControl isRequired>
+          <Input placeholder="username" type="text" />
+          <Input placeholder="password" type="password" />
+          <FormControl.HelperText>
+            Must login to use the App
+          </FormControl.HelperText>
+        </FormControl>
+        <Button size="sm" variant="outline">
+          LOGIN
+        </Button>
+        <Link>FORGOT PASSWORD?</Link>
+        <HStack>
+          <Text>Need To create an account?</Text>
+          <Link>REGISTER</Link>
+          <Text>here!</Text>
+        </HStack>
+      </Box>
+    </Box>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

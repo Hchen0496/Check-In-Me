@@ -1,10 +1,20 @@
+import { NativeBaseProvider } from "native-base";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./src/screen/HomeScreen";
-import { NativeBaseProvider, Box } from "native-base";
+import ForgotPassword from "./src/screen/ForgotPassword";
 
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <NativeBaseProvider>
-      <HomeScreen />
-    </NativeBaseProvider>
+    <NavigationContainer>
+      <NativeBaseProvider>
+        <Stack.Navigator initialRouteName="Login">
+          <Stack.Screen name="Login" component={HomeScreen} />
+          <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+          {/* <Stack.Screen name="Register" component = {}/> */}
+        </Stack.Navigator>
+      </NativeBaseProvider>
+    </NavigationContainer>
   );
 }

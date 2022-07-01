@@ -6,29 +6,40 @@ import {
   FormControl,
   Input,
   HStack,
+  AspectRatio,
+  Flex,
+  Spacer,
+  Stack,
+  Center,
 } from "native-base";
 
 export default function HomeScreen() {
   return (
-    <Box>
-      <Box alignItems="center" height={200}>
+    <Center alignItems="center" h="5/6">
+      <Box w="100%" maxWidth="300px">
         <FormControl isRequired>
-          <Input placeholder="username" type="text" />
-          <Input placeholder="password" type="password" />
-          <FormControl.HelperText>
-            Must login to use the App
-          </FormControl.HelperText>
+          <Stack mx="3" space={2.5}>
+            <FormControl.HelperText alignSelf="center">
+              Must login to use the App
+            </FormControl.HelperText>
+            <Input placeholder="username" type="text" />
+            <Input placeholder="password" type="password" />
+          </Stack>
         </FormControl>
+      </Box>
+      <Box>
+        <Box flexDirection="row-reverse">
+          <Link>FORGOT PASSWORD?</Link>
+        </Box>
         <Button size="sm" variant="outline">
           LOGIN
         </Button>
-        <Link>FORGOT PASSWORD?</Link>
         <HStack>
-          <Text>Need To create an account?</Text>
+          <Text>Need to create an account? </Text>
           <Link>REGISTER</Link>
-          <Text>here!</Text>
+          <Text> here!</Text>
         </HStack>
       </Box>
-    </Box>
+    </Center>
   );
 }

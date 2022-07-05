@@ -14,7 +14,7 @@ import {
 } from "native-base";
 import React from "react";
 
-export default function HomeScreen({ navigation }) {
+export default function Login({ navigation }) {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
   return (
@@ -56,7 +56,9 @@ export default function HomeScreen({ navigation }) {
           </Button>
           <HStack>
             <Text>Need to create an account? </Text>
-            <Link>REGISTER</Link>
+            <Link onPress={() => navigation.navigate("Register")}>
+              REGISTER
+            </Link>
             <Text> here!</Text>
           </HStack>
         </Stack>
